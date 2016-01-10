@@ -32,4 +32,6 @@ dependencies {
     testCompile 'junit:junit:4.12'
     compile files('libs/AMap_2DMap_v2.6.0_20150916.jar')
     compile 'com.android.support:appcompat-v7:23.0.1'
+
+
 }

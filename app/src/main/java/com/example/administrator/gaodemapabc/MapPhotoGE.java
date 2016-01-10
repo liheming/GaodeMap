@@ -1,5 +1,4 @@
 package com.example.administrator.gaodemapabc;
-
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
@@ -92,10 +91,10 @@ public class MapPhotoGE extends AppCompatActivity {
                 //处理选中或取消选中
                 if (seledRowIndex == position) {
                     seledRowIndex = -1;
-                    /*editMenu.setEnabled(false);//--闪退就是它*/
+                    editMenu.setEnabled(false);//--闪退就是它*/
                 } else {
                     seledRowIndex = position;
-                   /* editMenu.setEnabled(true);//--闪退就是它*/
+                    editMenu.setEnabled(true);//--闪退就是它*/
                 }
                 //通过ListView更新显示
                 photoAdapter.notifyDataSetChanged();
@@ -154,16 +153,18 @@ public class MapPhotoGE extends AppCompatActivity {
         //关闭数据库
         db.close();
     }
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_map_ptoto_ge, menu);
-
-        //禁用"修改名称"菜单项
-        MenuItem editMenu=menu.findItem(R.id.menu_item_edit);//--闪退就是它*/
-        /*editMenu.setEnabled(false);//--闪退就是它*/
+        //禁用修改名称菜单项
+        editMenu = menu.findItem(R.id.menu_item_edit);
+        editMenu.setEnabled(false);
         return true;
     }
+
+
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
@@ -172,6 +173,8 @@ public class MapPhotoGE extends AppCompatActivity {
         // as you specify a parent activity in AndroidManifest.xml.
         //  菜单项的单击时间响应处理，目前只是显示一个Toast提示
         switch (item.getItemId()) {
+
+
             case R.id.menu_item_gallery:
                 int albumId = -1;
                 //如果选中了数据行，则得到对应相册的id，seledRowIndex不是相册的id
@@ -288,7 +291,6 @@ public class MapPhotoGE extends AppCompatActivity {
                 return super.onOptionsItemSelected(item);
         }
     }
-
 
     /**
      * adpter for listView

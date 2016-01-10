@@ -116,18 +116,20 @@ public class Login extends Activity implements View.OnClickListener {
                 }
                 break;
             case R.id.btnSearch:
-                textView.setText("");
-                String sql3 = "select * from user"; //sql传统语句
-                cursor = db.rawQuery(sql3, new String[]{});
-                while (cursor.moveToNext()) {
-                    String name = cursor.getString(cursor.getColumnIndex("username"));
-                    String pass = cursor.getString(cursor.getColumnIndex("password"));
 
-                    // String age=cursor.getString(2);
-                    System.out.println("名字：" + name);
-                    // textView.setText("");
-                    textView.append("用户名:" + name + "-------------------密码" + pass + "\n");
-                }
+
+//                textView.setText("");
+//                String sql3 = "select * from user"; //sql传统语句
+//                cursor = db.rawQuery(sql3, new String[]{});
+//                while (cursor.moveToNext()) {
+//                    String name = cursor.getString(cursor.getColumnIndex("username"));
+//                    String pass = cursor.getString(cursor.getColumnIndex("password"));
+//
+//                    // String age=cursor.getString(2);
+//                    System.out.println("名字：" + name);
+//                    // textView.setText("");
+//                    textView.append("用户名:" + name + "-------------------密码" + pass + "\n");
+//                }
 //                Cursor cursor = db.query("user", null, null,//面向对象
 //                        null, null, null, null);
 //                while (cursor.moveToNext()) {
